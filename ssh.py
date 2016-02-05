@@ -14,7 +14,7 @@ def disable_paging(session, command="terminal length 0\n", delay=1):
 	return output
 
 def main():
-	ip_addr = "50.76.53.27"
+	ip = "50.76.53.27"
 	username = "pyclass"
 	password = getpass()
 	port = 8022
