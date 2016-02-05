@@ -13,7 +13,7 @@ def disable_paging(session, command="terminal length 0\n", delay=1):
 	output = session.recv(65535)
 	return output
 
-def main()
+def main():
 	ip_addr = "50.76.53.27"
 	username = "pyclass"
 	password = getpass()
