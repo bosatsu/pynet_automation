@@ -27,7 +27,12 @@ def main ():
 
     ssh_conn.sendline('show version')
     ssh_conn.expect('pynet-rtr2#')
-    print ssh_conn.before
+    
+    try:
+    	ssh_conn.sendline('show version')
+    	ssh_conn.expect('zzzz')
+    except pexpect.TIMEOUT:
+    	print "Found timeout"
 
 if __name__ == '__main__':
 	main()
