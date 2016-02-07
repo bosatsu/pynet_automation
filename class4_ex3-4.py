@@ -20,16 +20,12 @@ def main ():
     
     ssh_conn.sendline('show ip int brief')
     ssh_conn.expect('#')
-    print ssh_conn.before
 
     ssh_conn.sendline('terminal length 0')
     ssh_conn.expect('#')
 
-    ssh_conn.sendline('show version')
-    ssh_conn.expect('pynet-rtr2#')
-    
     try:
-    	ssh_conn.sendline('show version')
+    	ssh_conn.sendline('show run')
     	ssh_conn.expect('zzzz')
     except pexpect.TIMEOUT:
     	print "Found timeout"
